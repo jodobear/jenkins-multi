@@ -20,7 +20,12 @@ pipeline {
 	  stage('build') {
 		  steps {
 			 sh 'python3 --version'
-			 sh 'python3 ./server.py'
+			 sh 'tar v --create --gzip --file=server.tar.gz *.py'
+		  }
+	  }
+	  stage('Publish Artefact') {
+		  steps {
+			  archiveArtifacts 'server.tar.gz'
 		  }
 	  }
    }
