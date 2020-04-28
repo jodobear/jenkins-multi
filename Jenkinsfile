@@ -16,11 +16,11 @@ pipeline {
          steps {
             echo output
          }
-	  }
+      }
 	  stage('build') {
 		  steps {
-			 sh 'python3 --version'
-			 sh 'python3 ./server.py'
+			  sh 'python3 --version'
+			  sh 'python3 ./fib.py'
 		  }
 	  }
    }
